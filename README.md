@@ -1,5 +1,4 @@
-- name: Instalar CLI do Lovable
-  run: npm install -g lovable
+
 
 name: Deploy to Lovable
 
@@ -28,5 +27,8 @@ jobs:
       - name: Rodar testes
         run: npm test
 
+      - name: Instalar CLI do Lovable
+        run: npm install -g lovable
+
       - name: Deploy para Lovable
-        run: npx lovable deploy --token ${{ secrets.GITHUB_TOKEN }}
+        run: npx lovable deploy --token ${{ secrets.LOVABLE_TOKEN }}
