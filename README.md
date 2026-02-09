@@ -1,5 +1,5 @@
 
-name: Deploy to Lovable
+name: Implantar para Lovable
 
 on:
   push:
@@ -27,4 +27,7 @@ jobs:
         run: npm test
 
       - name: Deploy para Lovable
-        run: npx lovable deploy --token ${{ secrets.LOVABLE_TOKEN }}
+        run: npx lovable deploy --token ${{ secrets.GITHUB_TOKEN }}
+
+
+     
