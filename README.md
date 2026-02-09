@@ -1,3 +1,5 @@
+- name: Instalar CLI do Lovable
+  run: npm install -g lovable
 
 name: Deploy to Lovable
 
