@@ -1,2 +1,31 @@
 
 
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar lint
+        run: npx eslint .
+
+      - name: Rodar testes
+        run: npm test
+
+      - name: Build
+        run: npm run build
